@@ -1,4 +1,98 @@
 /*  csso by enniosan
+    2025 01 03
     base implementation of css classes to be used in a simple web site project
 */
+
+:root{
+    margin:0%;
+    padding:0%;
+    box-sizing: content-box;
+    text-rendering: optimizeSpeed;
+    
+    /*  css vars
+        you have to modify this params for each project
+    */
+    
+
+    /* typografy */
+
+    font-size: 16px;
+    line-height: 26px;
+
+
+    /* container */
+    --container-min-height: 100vh;
+
+
+
+    /* grid */
+
+    --min-col: 300px;
+    --col-gap: 15px;
+
+    /* colors */
+
+    --color-primary: #007bff;
+    --color-background: #f0f0f0;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-text-dark: #222;
+    --color-text-white: #fff;
+    --color-text-black: #000;
+    --color-text-gray: #999;
+    --color-text-gray-light: #ccc;
+    --color-text-gray-dark: #666;
+
+
+}
+
+html, body{
+    margin:0%;
+    padding:0%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+
+.clickable{ cursor: pointer; }
+.rounded{ border-radius: 15px; }
+.invisible{ display: none; }
+
+.p0{ padding: 0px; }
+.p10{ padding: 10px; }
+.p15{ padding: 15px; }
+.p20{ padding: 20px; }
+
+.m0{ margin: 0px; }
+.m10{ margin: 10px; }
+.m15{ margin: 15px; }
+.m20{ margin: 20px; }
+
+.fs10{ font-size: clamp( 8px, 3vw, 10px  ) }
+.fs12{ font-size: clamp( 10px, 3vw, 12px ) }
+.fs20{ font-size: clamp( 16px, 3vw, 20px ) }
+
+
+/*  containers  */
+
+.container{ width: 100%; min-height: var(--container-min-height); }
+.container .content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 1200px); }
+
+
+.grid-col{ display: grid;  grid-template-columns: repeat( auto-fill, minmax( var(--min-col), 1fr ) ); gap: var(--col-gap); }
+.col-4{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.col-3{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.col-2{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.col-1{ display: grid; grid-template-columns: 1fr; gap: 15px; }
+
+
+/*  media queries  */
+
+@media(max-width: 400px){
+    .col-4{ grid-template-columns: 1fr; }
+    .col-3{ grid-template-columns: 1fr; }
+    .col-2{ grid-template-columns: 1fr; }
+    .col-1{ grid-template-columns: 1fr; }
+
+}
 
