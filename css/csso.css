@@ -3,36 +3,38 @@
     base implementation of css classes to be used in a simple web site project
 */
 
-/*  fonts
+/*  
+    fonts
+    list of available fonts downloaded in the poject
+    by default three fonts are included. They came all from https://fonts.google.com/
+    I'm avoyding to download them from gfonts to maintain the project independent 
+    current fonts: Lato, Montserrat, Signika
+    The current defined language is latin only.
+    In this way I can keep the project lightweight but still complete for the most common tasks and meanings.
 
-    
 */
-
 @font-face {
 font-family: 'Lato';
 font-style: normal;
 font-weight: 300;
 font-display: swap;
 src: url("/csso/fonts/lato.woff2") format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
 font-family: 'Montserrat';
 font-style: normal;
-font-weight: 100 900;
+font-weight: 300;
 font-display: swap;
 src: "/csso/fonts/montserrat.woff2" format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }  
 
 @font-face {
 font-family: 'Signika';
 font-style: normal;
-font-weight: 300 700;
+font-weight: 300;
 font-display: swap;
 src: "/csso/fonts/signika.woff2" format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 
@@ -41,9 +43,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
     padding:0px;
     box-sizing: content-box;
     text-rendering: optimizeSpeed;
-
     transition: all 0.5s ease;
-
     font-family: 'Montserrat';
 
     
@@ -118,7 +118,6 @@ html, body{
 .container{ width: 100%; min-height: var(--container-min-height); margin:0px; }
 .content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 1200px); background-color: #007bff;}
 
-
 .grid-col{ display: grid;  grid-template-columns: repeat( auto-fill, minmax( var(--min-col), 1fr ) ); gap: var(--col-gap); }
 .col-4{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 .col-3{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
@@ -128,10 +127,27 @@ html, body{
 .col-top-center{ place-items: start center }
 .col-center-center{ place-items: center center; }
 
+
+
+/*
+    special classes
+
+    those special classes reacts to js events
+    they are specified to be manipulated by the css
+*/
+
+.backgroundable{
+    background: radial-gradient( circle, var(--color-primary), var(--color-background) );
+}
+
+
+
+
+
+
 /*  media queries  */
 
 @media( max-width: 500px){
-
     .container, .content{ padding: 0px!important; margin: 0px!important; width:100% }
 
     .col-4{ grid-template-columns: 1fr; }
