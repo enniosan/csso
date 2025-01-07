@@ -119,13 +119,38 @@ html, body{
 .content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 1200px); background-color: #007bff;}
 
 .grid-col{ display: grid;  grid-template-columns: repeat( auto-fill, minmax( var(--min-col), 1fr ) ); gap: var(--col-gap); }
-.col-4{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.col-3{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.col-2{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.col-4{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+.col-3{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.col-2{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
 .col-1{ display: grid; grid-template-columns: 1fr; gap: 15px; }
 
 .col-top-center{ place-items: start center }
 .col-center-center{ place-items: center center; }
+
+
+
+/*  cards: custom card  */
+
+.card{
+    width:100%;
+    background-color: var(--color-text-white);
+    padding: 10px;
+    display: grid;
+    place-items: start center;
+    gap: 10px;
+}
+
+.card .imgContainer{
+    overflow:hidden;
+    width: 100%;
+}
+
+.card .imgContainer img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
 
 
 
