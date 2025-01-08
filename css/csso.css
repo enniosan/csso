@@ -58,7 +58,7 @@ src: "/csso/fonts/signika.woff2" format('woff2');
     line-height: 26px;
 
     /* container */
-    --container-min-height: 100vh;
+    --container-min-height: 60vh;
 
     /* grid */
 
@@ -66,6 +66,44 @@ src: "/csso/fonts/signika.woff2" format('woff2');
     --col-gap: 15px;
 
     /* colors */
+
+    --red-1: #3a0000; 
+    --red-2: #7c0000;
+    --red-3: #e60b0b;
+    --red-4: #da9a9a;
+    --red-5: #ecd8d8;
+    
+    --blue-1: #001f4d;
+    --blue-2: #0047b3;
+    --blue-3: #007bff;
+    --blue-4: #9fbfe2;
+    --blue-5: #e7eef7;
+    
+    --yellow-1: #b38f00;
+    --yellow-2: #ffcc00;
+    --yellow-3: #ffdb4d;
+    --yellow-4: #d6cb9d;
+    --yellow-5: #faf6e6;
+    
+    --green-1: #003014;
+    --green-2: #015f1d;
+    --green-3: #00a732;
+    --green-4: #79b98c;
+    --green-5: #cbdfd1;
+
+    --dark-1: #000000FF;
+    --dark-2: #000000AA;
+    --dark-3: #00000077;
+    --dark-4: #00000044;
+    --dark-5: #00000011;
+
+
+    --light-1: #ffffffFF;
+    --light-2: #ffffffAA;
+    --light-3: #ffffff77;
+    --light-4: #ffffff44;
+    --light-5: #ffffff11;
+
 
     --color-primary: #007bff;
     --color-background: #f0f0f0;
@@ -87,11 +125,8 @@ html, body{
     padding:0%;
     font-size: 16px;
 
-    /*  flat    
-    background-color: #f0f0f0;
-    /**/
     /*  gradient    */
-    background: linear-gradient( 180deg, var(--zinc),var(--carbon) );
+    background: linear-gradient( 180deg, var(--green2),var(--green-5) );
 }
 
 .clickable{ cursor: pointer; }
@@ -116,7 +151,7 @@ html, body{
 /*  containers  */
 
 .container{ width: 100%; min-height: var(--container-min-height); margin:0px; }
-.content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 1200px); background-color: #007bff;}
+.content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 1200px); }
 
 .grid-col{ display: grid;  grid-template-columns: repeat( auto-fill, minmax( var(--min-col), 1fr ) ); gap: var(--col-gap); }
 .col-4{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
@@ -133,7 +168,7 @@ html, body{
 
 .card{
     width:100%;
-    background-color: var(--color-text-white);
+    background-color: var(--light-4);
     padding: 10px;
     display: grid;
     place-items: start center;
@@ -164,9 +199,6 @@ html, body{
 .backgroundable{
     background: radial-gradient( circle, var(--color-primary), var(--color-background) );
 }
-
-
-
 
 
 
