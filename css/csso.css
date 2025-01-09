@@ -58,7 +58,7 @@ src: "/csso/fonts/signika.woff2" format('woff2');
     line-height: 26px;
 
     /* container */
-    --container-min-height: 60vh;
+    --container-min-height: 1000px;
 
     /* grid */
 
@@ -120,15 +120,6 @@ src: "/csso/fonts/signika.woff2" format('woff2');
     --carbon: #1d1b24;
 }
 
-html, body{
-    margin:0%;
-    padding:0%;
-    font-size: 16px;
-
-    /*  gradient    */
-    background: linear-gradient( 180deg, var(--green2),var(--green-5) );
-}
-
 .clickable{ cursor: pointer; }
 .rounded{ border-radius: 15px; }
 .invisible{ display: none; }
@@ -152,6 +143,7 @@ html, body{
 
 .container{ width: 100%; min-height: var(--container-min-height); margin:0px; }
 .content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 1200px); }
+.small-content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 500px); }
 
 .grid-col{ display: grid;  grid-template-columns: repeat( auto-fill, minmax( var(--min-col), 1fr ) ); gap: var(--col-gap); }
 .col-4{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
