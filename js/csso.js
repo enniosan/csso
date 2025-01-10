@@ -97,9 +97,51 @@ document.querySelectorAll('.backgroundable').forEach( item => {
     }
 });
 
-
+litem = "";
 document.querySelectorAll('.paralText').forEach( item => {
 
-    console.log( item.getBoundingClientRect() );
+    item.style.position = 'absolute';
+    item.style.zIndex = 1;
+    item.style.top = '0px';
 
+
+    parent = item.parentElement;
+
+    start_position = parent.getClientRects()[0].top + ( ( parent.getClientRects()[0].height - item.getClientRects()[0].height ) / 2 );
+
+    console.log("start_position", start_position);  
+    item.style.top = start_position + 'px';
+
+    /*
+
+    h = .clientHeight;
+
+    box = item.getClientRects()[0];
+
+    offset = box.height;
+
+
+    start = item.style.top.slice(0, -2) * 1;    
+
+    window.addEventListener('scroll', e => {
+            
+        boundaries = item.getClientRects()[0];
+        
+      
+        if( boundaries.top < window.innerHeight && boundaries.bottom > 0){
+      
+            lp = item.style.top.slice(0, -2) * 1;
+            
+            t = item.parentElement.getClientRects()[0].top;
+
+            p = start  + ( t / 2);
+
+            console.log("p", start, p, t);
+
+            
+            item.style.top = `${p}px `;
+        }
+       
+    });
+    /* */
 });
