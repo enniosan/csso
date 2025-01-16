@@ -30,7 +30,7 @@ document.querySelectorAll('.backgroundable').forEach( item => {
     */
 
     if(item.dataset.parallax){
-
+        
         try{
             let imgw;
             let imgh;

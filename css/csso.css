@@ -13,6 +13,7 @@
     In this way I can keep the project lightweight but still complete for the most common tasks and meanings.
 
 */
+
 @font-face {
 font-family: 'Lato';
 font-style: normal;
@@ -26,19 +27,20 @@ font-family: 'Montserrat';
 font-style: normal;
 font-weight: 300;
 font-display: swap;
-src: "/csso/fonts/montserrat.woff2" format('woff2');
+src: url("/csso/fonts/montserrat.woff2") format('woff2');
 }  
 
 @font-face {
-font-family: 'Signika';
+font-family: 'Signika'; 
 font-style: normal;
 font-weight: 300;
 font-display: swap;
-src: "/csso/fonts/signika.woff2" format('woff2');
+src: url("/csso/fonts/signika.woff2") format('woff2');
 }
 
 
 :root{
+
     margin:0px;
     padding:0px;
     box-sizing: content-box;
@@ -46,7 +48,6 @@ src: "/csso/fonts/signika.woff2" format('woff2');
     transition: all 0.5s ease;
     font-family: 'Montserrat';
 
-    
     /*  css vars
         you have to modify this params for each project
     */
@@ -119,6 +120,23 @@ src: "/csso/fonts/signika.woff2" format('woff2');
     --carbon: #1d1b24;
 }
 
+
+/*  default html behaviours */
+html, body{
+    scroll-behavior: smooth;
+    
+}
+
+/*  scrollbar   */
+
+::-webkit-scrollbar{width: 12px;}
+::-webkit-scrollbar-track{background: var(--green-3)}
+::-webkit-scrollbar-thumb{ background:var(--light-3); border-radius: 10px }
+::-webkit-scrollbar-thumb:hover{ background:var(--light-1) }
+
+/*  colors  */
+
+
 .red-1{ color: var(--red-1); } .b-red-1{ background-color: var(--red-1); }  
 .red-2{ color: var(--red-2); } .b-red-2{ background-color: var(--red-2); } 
 .red-3{ color: var(--red-3); } .b-red-3{ background-color: var(--red-3); } 
@@ -169,14 +187,17 @@ src: "/csso/fonts/signika.woff2" format('woff2');
 .m15{ margin: 15px; }
 .m20{ margin: 20px; }
 
-.fs10{ font-size: clamp( 8px, 3vw, 10px  ) }
+.fs10{ font-size: clamp( 8px, 3vw,  10px  ) }
 .fs12{ font-size: clamp( 10px, 3vw, 12px ) }
+.fs15{ font-size: clamp( 16px, 3vw, 15px ) }
+.fs18{ font-size: clamp( 16px, 3vw, 18px ) }
 .fs20{ font-size: clamp( 16px, 3vw, 20px ) }
+.fs30{ font-size: clamp( 16px, 3vw, 30px ) }
 
 
 /*  containers  */
 
-.container{ width: 100%; min-height: var(--container-min-height); margin:0px; }
+.container{ width: 100%; min-height: var(--container-min-height); margin:0px; scroll-behavior: smooth; overflow:hidden;}
 .content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 1200px); }
 .small-content{ padding: 20px; margin: auto; width: clamp(100px, 90vw, 500px); }
 
@@ -188,30 +209,6 @@ src: "/csso/fonts/signika.woff2" format('woff2');
 
 .col-top-center{ place-items: start center }
 .col-center-center{ place-items: center center; }
-
-
-/*  cards: custom card  */
-
-.card{
-    width:100%;
-    background-color: var(--light-4);
-    padding: 10px;
-    display: grid;
-    place-items: start center;
-    gap: 10px;
-}
-
-.card .imgContainer{
-    overflow:hidden;
-    width: 100%;
-}
-
-.card .imgContainer img{
-    width: 100%;
-    object-fit: cover;
-}
-
-
 
 
 
@@ -229,13 +226,14 @@ src: "/csso/fonts/signika.woff2" format('woff2');
 
 .paralText{
     margin:auto;
-    font-family:Signika;
+    perspective: 500px;
+    transform: translateZ(-250px) scale(1.5);
 }
 
 
 /*  media queries  */
 
-@media( max-width: 500px){
+@media( max-width: 760px){
     .container, .content{ padding: 0px!important; margin: 0px!important; width:100% }
 
     .col-4{ grid-template-columns: 1fr; }
