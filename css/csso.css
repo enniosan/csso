@@ -210,6 +210,12 @@ html, body{
 .col-top-center{ place-items: start center }
 .col-center-center{ place-items: center center; }
 
+.gap0{ gap:0px;}
+.gap5{ gap:5px;}
+.gap10{ gap:10px;}
+.gap15{ gap:15px;}
+.gap20{ gap:20px;}
+
 
 
 /*
