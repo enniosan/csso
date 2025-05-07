@@ -69,6 +69,7 @@ document.querySelectorAll('.backgroundable').forEach( item => {
                 
                 /*  resizing and restyling the image */
                 item.style.backgroundSize = 'auto ' + imgheight + 'px';
+                item.style.backgroundRepeat = 'no-repeat';
                 
 
                 /*  adding the scroll listener event */
